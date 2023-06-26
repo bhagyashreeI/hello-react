@@ -1,0 +1,29 @@
+{
+  "name": "hello-react",
+  "version": "1.0.0",
+  "description": "Hello React App",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhagyashreeI/hello-react.git"
+  },
+  "author": "Bhagyashree RP",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhagyashreeI/hello-react/issues"
+  },
+  "homepage": "https://github.com/bhagyashreeI/hello-react#readme",
+  "devDependencies": {
+    "parcel": "^2.9.2",
+    "parcel-bundler": "^1.12.5",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
