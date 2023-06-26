@@ -1,6 +1,78 @@
-#heading{
-    color:green;
-}
 .header{
     display:flex;
+    border:1px solid #dfd7d7;
+    background-color:#F5DEB3;
+}
+div.logoitem {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+}
+.logoitem img {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+}
+.caption {
+  position: relative;
+  animation: captionmove 5s infinite,blink 2s linear infinite;
+  color:green;
+  font-weight:bold;
+}
+ @keyframes blink {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: .5;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+@keyframes captionmove {
+  from {left: 0px;}
+  to {left: 100px;}
+  0%   {color: Tomato;}
+  25%  {color: Orange;}
+  50%  {color: DodgerBlue;}
+  100% {color: deeppink;}
+}
+@keyframes highlisttext {
+  0%   {color: red;}
+  25%  {color: #9FE2BF;}
+  50%  {color: blue;}
+  100% {color: pink;}
+}
+.logo{
+    width:30%
+}
+.nav-items{
+    width:70%
+}
+.nav-items > ul {
+    list-style:none;
+    font-weight:bold;
+    padding:10px;
+    display:flex;
+}
+.nav-items > ul >li {
+    font-weight:bold;
+    padding:10px;
+}
+.container{
+    border:1px solid #dfd7d7;
+    display:flex;
+    flex-wrap: wrap;
+}
+.card{
+    padding:10px;
+    margin:10px;
+    border:1px solid #dfd7d7;
+    width: 200px;
+    background-image: linear-gradient(to bottom right, #9FE2BF, #fff);
+}
+.card >span{
+    word-break: break-all;
 }
