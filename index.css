@@ -76,3 +76,7 @@ div.logoitem {
 .card >span{
     word-break: break-all;
 }
+.filter-btn{
+  margin:10px;
+  cursor:pointer;
+}

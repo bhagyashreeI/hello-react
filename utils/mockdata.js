@@ -1,29 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { CDN_URL } from "./utils/constants";
-
-const Header = () => {
-    return (
-        <div className='header'>
-            <div className='logo'>
-                <div className="logoitem">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY-UNPJkW8OAJT10rkDLsrFQMFn7kJ587ryg&usqp=CAU" height="100" />
-                    <span className="caption"><i>Order-Eat-Repeat</i></span>
-                </div>
-            </div>
-            <div className='nav-items'>
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>My Cart</li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-
-const restLlist = [
+export let restLlist = [
     {
         "type": "restaurant",
         "data": {
@@ -1212,45 +1187,3 @@ const restLlist = [
         "subtype": "basic"
     },
 ];
-
-const RestCard = (props) =>{
-    const { restData } = props;
-    const {
-        cloudinaryImageId,
-        name,
-        cuisines,
-        avgRating,
-        costForTwo,
-        deliveryTime
-    } = restData?.data;
-    return (
-        <div className="card">
-            <img src={CDN_URL + cloudinaryImageId} height="100" />
-            <h3>{name}</h3>
-            <span>{cuisines.join(',')}</span>
-            <h4>{avgRating}</h4>
-            <h4>Rs.{costForTwo/100} FOR TWO</h4>
-            <h4>{deliveryTime} minutes</h4>
-        </div>
-    )
-}
-
-const AppLayout = () => {
-    return (
-        <>
-            <Header />
-            <div className='container'>
-            {
-                    restLlist.map(restaurant =>(
-                        <RestCard key={restaurant.data.id} restData={restaurant} />
-                    ))
-            }
-                
-            </div>
-        </>
-    )
-}
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<AppLayout/>);
