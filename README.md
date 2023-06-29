@@ -11,5 +11,11 @@
         - useState()
             - it maintains the state of component.
             - whenever state variable update , react will re-render the component
+            - can we used named and normal export both for same component ?
         - useEffect()
+            - it takes two arguments
+                1. arrow function
+                2. dependency array
+            - when to use ? 
+                - when render cycle is completed then useEffect function will call
 

@@ -5,6 +5,6 @@ export const LOGO_URL =
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY-UNPJkW8OAJT10rkDLsrFQMFn7kJ587ryg&usqp=CAU";
 
 export const MENU_API =
-    "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=";
+    "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5532691&lng=73.9231229&restaurantId=";
 
 

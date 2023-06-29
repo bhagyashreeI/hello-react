@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import RestCard from './RestCard';
 import { restLlist } from "./../../utils/mockdata";
 
@@ -6,6 +6,16 @@ const Body = () => {
     //const [restarantList,setRestList] = useState(restLlist);
     const [restarantList, setRestList] = useState({previous: restLlist, current: restLlist});
     const [searchval,setSearchVal] = useState('');
+    useEffect(()=>{
+        fetchData();
+    },[]);
+    const fetchData = async () =>{
+        const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5532691&lng=73.9231229&page_type=DESKTOP_WEB_LISTING');
+        const json = await data.json();
+        console.log(json.data.cards[2].data.data.cards);
+        const allrest = json.data.cards[2].data.data.cards;
+        setRestList({ previous: allrest, current: allrest });
+    }
     return (
         <div className="bodycontainer">
             <div className="filter">
