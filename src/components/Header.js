@@ -1,6 +1,8 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 export const Header = (props) => {
+    const [loginBtn,setLoginBtn] = useState('Login');
+
     return (
         <div className='header'>
             <div className='logo'>
@@ -15,6 +17,9 @@ export const Header = (props) => {
                     <li>About Us</li>
                     <li>Contact Us</li>
                     <li>My Cart</li>
+                    <button onClick={
+                        loginBtn=='Login' ? () => setLoginBtn("Logout") : () => setLoginBtn("Login")
+                    }>{loginBtn}</button>
                 </ul>
             </div>
         </div>

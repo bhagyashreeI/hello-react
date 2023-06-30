@@ -76,7 +76,59 @@ div.logoitem {
 .card >span{
     word-break: break-all;
 }
+.body-btn{
+  background-image: linear-gradient(to bottom right, #9FE2BF, #fff);
+  border:1px solid #9FE2BF;
+  padding:5px;
+  color:#b36262;
+  font-weight:700;
+}
 .filter-btn{
   margin:10px;
   cursor:pointer;
+}
+.search-input{
+  border:1px solid #9FE2BF;
+  padding:4px;
+  color:#b36262;
+}
+.search-btn{
+}
+.shimmer-container{
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.shimmer-card {
+  background-image: linear-gradient(to right, #ebebeb calc(50% - 100px), #c5c5c5 50%, #ebebeb calc(50% + 100px));
+  background-size: 0;
+  width:200px;
+  height:300px;
+  position: relative;
+  overflow: hidden;
+  border:1px solid #ccc;
+  margin:15px;
+}
+
+.shimmer-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(200% + 200px);
+  bottom: 0;
+  background-image: inherit;
+  animation: move 2s linear infinite;
+}
+
+@keyframes move {
+  to {
+    transform: translateX(calc(50% + 100px));
+  }
+}
+@keyframes shimmer {
+  100% {
+    /* setting up mask position at left side */
+    -webkit-mask-position: left
+  }
 }
