@@ -9,12 +9,13 @@ const RestCard = (props) =>{
         cuisines,
         avgRating,
         costForTwo,
-        deliveryTime
+        deliveryTime,
+        id
     } = restData?.data;
     return (
         <div className="card">
             <img src={CDN_URL + cloudinaryImageId} height="100" />
-            <h3>{name}</h3>
+            <h3>{name} {id}</h3>
             <span>{cuisines.join(',')}</span>
             <h4>{avgRating}</h4>
             <h4>Rs.{costForTwo/100} FOR TWO</h4>

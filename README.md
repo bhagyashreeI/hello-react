@@ -18,8 +18,16 @@
                 2. dependency array
             - when to use ? 
                 - when render cycle is completed then useEffect function will call
+            - useEffect dependency array
+                - if there is not dependency array then useEffect callback will called on every component render
+                - if dependency array is empty = [] then useEffect callback will called on initial render (only once)
+                - if dependency array has some value i.e state then useEffect callback will called whenever that state updated
 # optional chaining
 
 # Shimmer
     A shimmer UI is a version of the UI that doesn't contain actual content, but instead mimics the layout and shapes of the content that will eventually appear. 
+
+# Routing in web app
+    1. Client side routing
+    2. Server side routing  (it includes network call to get data and load the data)
 

@@ -158,3 +158,32 @@ div.logoitem {
 .main-filter-section div:last-child {
   margin-left: auto;
 }
+
+.restaurantHeader_wrapper{
+  display:flex;
+}
+.nameAddress_wrapper
+{
+  flex-grow: 8
+}
+.rating_wrapper
+{
+  flex-grow: 1;
+  padding:10px;
+}
+.btn_wrapper{
+  border: 1px solid #e9e9eb;
+  box-shadow: 0 1px 5px #f9f9f9;
+  border-radius: 6px;
+  text-align: center;
+  padding: 8px;
+  max-width: 100px;
+}
+.ratings_avgRating{
+  color: #3d9b6d;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e9e9eb;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: block;
+}

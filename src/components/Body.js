@@ -1,12 +1,12 @@
 import React,{useEffect, useState} from 'react';
 import RestCard from './RestCard';
 import Shimmer from './Shimmer';
+import { Link } from 'react-router-dom'
 
 const Body = () => {
     const [restarantList,setRestList] = useState([]);
     const [filtredRestarantList,setFiltredRestList] = useState([]);
     const [restaurantCnt,setRestaurantCnt] = useState('');
-    //const [restarantList, setRestList] = useState({previous: [], current: []});
     const [searchval,setSearchVal] = useState('');
     useEffect(()=>{
         fetchData();
@@ -23,7 +23,6 @@ const Body = () => {
         const filteredList = [...restarantList].sort((a, b) => parseInt(a.data.deliveryTime) - parseInt(b.data.deliveryTime));
         setFiltredRestList(filteredList);
     }
-    console.log("rendering");
     //conditional rendering
     return filtredRestarantList.length === 0 ? 
         <div className="shimmer-container">
@@ -90,7 +89,7 @@ const Body = () => {
                 
                 {
                     filtredRestarantList.map(restaurant =>(
-                        <RestCard key={restaurant.data.id} restData={restaurant} />
+                        <Link key={restaurant.data.id} to={"/restaurants/"+restaurant.data.id}><RestCard  restData={restaurant} /></Link>
                     ))
                 }
             </div>
