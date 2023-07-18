@@ -1,22 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { MENU_API } from "./../../utils/constants"
+import React from 'react';
+import { CDN_URL } from "./../../utils/constants"
 import Shimmer from './Shimmer';
 import {useParams} from 'react-router-dom'
+import useRestaurantMenu from './../../utils/useRestaurantMenu'
 
 const RestaurantMenu = () => {
-    const [resInfo, setResInfo] = useState(null);
-
-    useEffect(() => {
-        fetchData();
-    }, []);
-
+    
     const { resId } = useParams();
-
-    const fetchData = async () => {
-        const data = await fetch(MENU_API + resId);
-        const json = await data.json();
-        setResInfo(json.data);
-    };
+    const resInfo = useRestaurantMenu(resId);
 
     if(resInfo === null) return (
         <div className="shimmer-container">
@@ -47,17 +38,26 @@ const RestaurantMenu = () => {
                         <span aria-hidden="true">{totalRatingsString}</span>
                     </button>
                 </div>
+                </div>
                 <div className="menu_wrapper">
+                <button>Recommended ({itemCards.length})</button>
                 {
                     itemCards.map(item => (
-                        <div key={item.card.info.id}>
-                            <p>{item.card.info.name}</p>
-                            <span>Rs. {item.card.info.price / 100 || item.card.info.defaultPrice/100}</span>
+                        <div className="menus" key={item.card.info.id}>
+                            <div className="menu-details">
+                                <h3>{item.card.info.name}</h3>
+                                <span>Rs. {item.card.info.price / 100 || item.card.info.defaultPrice/100}</span>
+                                <p>{item?.card?.info?.description}</p>
+                            </div>
+                            <div className="menu-img-container">
+                                <img src={CDN_URL + item.card.info.imageId} className="menu-img"/>
+                                <button className="btn">Add</button>
+                            </div>
                         </div>
                     ))
                 }
                 </div>
-            </div>
+            
         </>
     );
 };

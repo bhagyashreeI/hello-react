@@ -2,12 +2,16 @@ import React,{useEffect, useState} from 'react';
 import RestCard from './RestCard';
 import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom'
+import useOnlineStatus from './../../utils/useOnlineStatus'
 
 const Body = () => {
     const [restarantList,setRestList] = useState([]);
     const [filtredRestarantList,setFiltredRestList] = useState([]);
     const [restaurantCnt,setRestaurantCnt] = useState('');
     const [searchval,setSearchVal] = useState('');
+
+    const onlineStatus = useOnlineStatus();
+
     useEffect(()=>{
         fetchData();
     },[]);
@@ -19,11 +23,9 @@ const Body = () => {
         setFiltredRestList(allrest);
         setRestaurantCnt(allrest.length)
     }
-    const filterBy = (type,order=null) =>{
-        const filteredList = [...restarantList].sort((a, b) => parseInt(a.data.deliveryTime) - parseInt(b.data.deliveryTime));
-        setFiltredRestList(filteredList);
-    }
     //conditional rendering
+
+    if (onlineStatus === false) return (<h1>Looks like you are offline...</h1>)
     return filtredRestarantList.length === 0 ? 
         <div className="shimmer-container">
             {Array(10).fill(1).map((el, i) =>

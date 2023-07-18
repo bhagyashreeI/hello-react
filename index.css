@@ -1,4 +1,10 @@
-
+body{
+  font-family: ProximaNova,
+  arial,
+  Helvetica Neue,
+  sans-serif;
+  letter-spacing: 0;
+}
 .header{
     display:flex;
     border:1px solid #dfd7d7;
@@ -161,10 +167,11 @@ div.logoitem {
 
 .restaurantHeader_wrapper{
   display:flex;
+  padding:20px;
 }
 .nameAddress_wrapper
 {
-  flex-grow: 8
+  flex-grow: 29
 }
 .rating_wrapper
 {
@@ -187,3 +194,74 @@ div.logoitem {
   margin-bottom: 8px;
   display: block;
 }
+.menu_wrapper{
+padding:20px;
+}
+.menu_wrapper .menus{
+  border-bottom:1px solid rgba(40, 44, 63, .45);
+  padding-bottom:10px;
+  display:flex;
+}
+.menu-details{
+  flex-grow:8;
+}
+
+
+
+
+.menu-img-container {
+  position: relative;
+  width: 100%;
+  max-width: 123px;
+  flex-grow:1;
+  padding:10px;
+}
+
+.menu-img-container .menu-img {
+  width: 118px;
+  height: 96px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.menu-img-container .btn {
+  position: absolute;
+  bottom: -19%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  color: #60b246;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px #d4d5d9;
+  font-size: .9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.menu-img-container .btn:hover {
+  box-shadow: 0 2px 8px #566ab9;
+}
+.user-list{
+  display:flex;
+}
+.user-card{
+  padding:10px;
+  margin-right:10px;
+}
+.divInfo-d-none{
+  display:none;
+}
+.show-link{
+  font-size:12px;
+  text-decoration:underline;
+  color:blue;
+  cursor:pointer
+}
+
